@@ -2,13 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-x: clip; /* modern browsers: clips without breaking position: sticky */
+}
+
 body {
   margin: 0;
+  width: 100%;
+  max-width: 100%;
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   color: #111827;
   background: #fff;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  overflow-x: clip;
 }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
